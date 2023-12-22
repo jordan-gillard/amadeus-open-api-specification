@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Flight Availibilities Search
+  title: Flight Availabilities Search
   description: "\nBefore using this API, we recommend you read our **[Authorization\
     \ Guide](https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262)**\
     \ for more information on how to generate an access token. \n\nPlease also be\
@@ -16,14 +16,14 @@ info:
   x-status: validated
   x-release-note:
     "1.0.0":
-    - Initial release of Flight Availibilities Search
+    - Initial release of Flight Availabilities Search
 servers:
 - url: https://test.api.amadeus.com/v1
 paths:
   /shopping/availability/flight-availabilities:
     post:
       tags:
-      - Availibility
+      - Availability
       summary: Return list of Flight Availabilities based on posted searching criteria.
       operationId: searchFlightAvailabilities
       parameters:
@@ -463,7 +463,7 @@ components:
           $ref: '#/components/schemas/TravelerType'
         associatedAdultId:
           type: string
-          description: "if type=\"HELD_INFANT\", corresponds to the adult travelers's\
+          description: "if type=\"HELD_INFANT\", corresponds to the adult traveler's\
             \ id who will share the seat"
     SearchCriteriaLight:
       type: object
@@ -639,7 +639,7 @@ components:
           co2Emissions:
             minItems: 1
             type: array
-            description: Co2 informations
+            description: Co2 information
             items:
               $ref: '#/components/schemas/Co2Emission'
       - $ref: '#/components/schemas/FlightSegment'
