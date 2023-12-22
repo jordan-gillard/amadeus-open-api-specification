@@ -146,13 +146,18 @@ paths:
                         cityCode: BOS
                         countryCode: US
         "400":
-          description: "code    | title                                 \n-------\
-            \ | ------------------------------------- \n425     | INVALID DATE\n477\
-            \     | INVALID FORMAT\n572     | INVALID OPTION\n2668    | PARAMETER\
-            \ COMBINATION INVALID/RESTRICTED\n2781    | INVALID LENGTH\n4926    |\
-            \ INVALID DATA RECEIVED\n9880    | SELECTED DATE IS TOO FAR IN THE FUTURE\n\
-            10661   | MAXIMUM NUMBER OF OCCURRENCES EXCEEDED \n32171   | MANDATORY\
-            \ DATA MISSING\n"
+          description: |
+            | code  | title                                    |                       
+            |-------|------------------------------------------|
+            | 425   | INVALID DATE                             |
+            | 477   | INVALID FORMAT                           |
+            | 572   | INVALID OPTION                           |
+            | 2668  | PARAMETER COMBINATION INVALID/RESTRICTED |
+            | 2781  | INVALID LENGTH                           |
+            | 4926  | INVALID DATA RECEIVED                    |
+            | 9880  | SELECTED DATE IS TOO FAR IN THE FUTURE   |
+            | 10661 | MAXIMUM NUMBER OF OCCURRENCES EXCEEDED   |
+            | 32171 | MANDATORY DATA MISSING                   |
           content:
             application/vnd.amadeus+json:
               schema:
