@@ -278,7 +278,7 @@ components:
         operating:
           $ref: '#/components/schemas/OperatingFlight'
         duration:
-          $ref: 'SharedEntities.yaml#/components/schemas/Duration'
+          $ref: 'SharedComponents.yaml#/components/schemas/Duration'
         stops:
           type: array
           description:
@@ -292,7 +292,7 @@ components:
       type: object
       properties:
         iataCode:
-          $ref: "SharedEntities.yaml#/components/schemas/IataAirportCode"
+          $ref: "SharedComponents.yaml#/components/schemas/IataAirportCode"
         terminal:
           type: string
           description: terminal name / number
@@ -314,9 +314,9 @@ components:
       type: object
       properties:
         iataCode:
-          $ref: "SharedEntities.yaml#/components/schemas/IataAirportCode"
+          $ref: "SharedComponents.yaml#/components/schemas/IataAirportCode"
         duration:
-          $ref: 'SharedEntities.yaml#/components/schemas/Duration'
+          $ref: 'SharedComponents.yaml#/components/schemas/Duration'
       description: details of stops for direct or change of gauge flights
     FlightStop:
       title: FlightStop
@@ -594,7 +594,7 @@ components:
           description: "If true, a payment card is mandatory to book this flight offer"
           example: false
         duration:
-          $ref: 'SharedEntities.yaml#/components/schemas/Duration'
+          $ref: 'SharedComponents.yaml#/components/schemas/Duration'
         segments:
           title: Segments
           maxItems: 9
