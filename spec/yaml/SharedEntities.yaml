@@ -1,0 +1,12 @@
+openapi: 3.1.0
+info:
+  title: Shared Components
+  description: This file contains component schemas shared by multiple specification files.
+  version: 1.0.0
+components:
+  schemas:
+    Duration:
+      type: string
+      pattern: ^P(?=\d|T\d)(\d+Y)?(\d+M)?(\d+D)?(T(\d+H)?(\d+M)?(\d+S)?)?$
+      description: stop duration in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) PnYnMnDTnHnMnS format
+      example: PT2H10M
