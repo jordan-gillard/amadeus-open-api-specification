@@ -10,3 +10,8 @@ components:
       pattern: ^P(?=\d|T\d)(\d+Y)?(\d+M)?(\d+D)?(T(\d+H)?(\d+M)?(\d+S)?)?$
       description: stop duration in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) PnYnMnDTnHnMnS format
       example: PT2H10M
+    IataAirportCode:
+      type: string
+      pattern: ^[A-Z]{3}$
+      description: "[Three letter IATA airport code](http://www.iata.org/publications/Pages/code-search.aspx)"
+      example: JFK

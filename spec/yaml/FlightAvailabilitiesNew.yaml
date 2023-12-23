@@ -292,9 +292,7 @@ components:
       type: object
       properties:
         iataCode:
-          type: string
-          description: "[IATA airline codes](http://www.iata.org/publications/Pages/code-search.aspx)"
-          example: JFK
+          $ref: "SharedEntities.yaml#/components/schemas/IataAirportCode"
         terminal:
           type: string
           description: terminal name / number
@@ -316,9 +314,7 @@ components:
       type: object
       properties:
         iataCode:
-          type: string
-          description: "[IATA airline codes](http://www.iata.org/publications/Pages/code-search.aspx)"
-          example: JFK
+          $ref: "SharedEntities.yaml#/components/schemas/IataAirportCode"
         duration:
           $ref: 'SharedEntities.yaml#/components/schemas/Duration'
       description: details of stops for direct or change of gauge flights
@@ -345,8 +341,7 @@ components:
         code:
           pattern: "[a-zA-Z0-9]{3}"
           type: string
-          description: |
-            IATA aircraft code (http://www.flugzeuginfo.net/table_accodes_iata_en.php)
+          description: [IATA aircraft code](https://www.avcodes.co.uk/acrtypes.asp)
           example: "318"
       description: information related to the aircraft
     OperatingFlight:
