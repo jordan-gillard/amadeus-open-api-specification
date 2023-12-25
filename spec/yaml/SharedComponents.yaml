@@ -13,5 +13,17 @@ components:
     IataAirportCode:
       type: string
       pattern: ^[A-Z]{3}$
-      description: "[Three letter IATA airport code](http://www.iata.org/publications/Pages/code-search.aspx)"
+      description: |
+        [Three letter IATA airport code](http://www.iata.org/publications/Pages/code-search.aspx)
       example: JFK
+    IataLocationCode:
+      type: string
+      pattern: ^[A-Z]{3}$
+      description: |
+        Location, such as a city or an airport. Currently, only the locations defined in 
+        [IATA](http://www.iata.org/publications/Pages/code-search.aspx) are supported.
+      examples:
+        airport:
+          value: JFK
+        city:
+          value: NYC

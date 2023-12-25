@@ -9,31 +9,31 @@ info:
     \ or NYC (New-York)."
   version: 1.0.2
   x-tags:
-  - '#quick-connect'
-  - '#online-retail'
-  - '#mobile-services'
-  - '#ama-for-dev'
+    - '#quick-connect'
+    - '#online-retail'
+    - '#mobile-services'
+    - '#ama-for-dev'
   x-status: validated
   x-release-note:
     "1.0.0":
-    - Initial release of Flight Availabilities Search
+      - Initial release of Flight Availabilities Search
 servers:
-- url: https://test.api.amadeus.com/v1
+  - url: https://test.api.amadeus.com/v1
 paths:
   /shopping/availability/flight-availabilities:
     post:
       tags:
-      - Availability
+        - Availability
       summary: Return list of Flight Availabilities based on posted searching criteria.
       operationId: searchFlightAvailabilities
       parameters:
-      - name: X-HTTP-Method-Override
-        in: header
-        description: the HTTP method to apply
-        required: true
-        schema:
-          type: string
-          default: GET
+        - name: X-HTTP-Method-Override
+          in: header
+          description: the HTTP method to apply
+          required: true
+          schema:
+            type: string
+            default: GET
       requestBody:
         description: list of criteria to retrieve a list of flight availabilities
         content:
@@ -49,7 +49,7 @@ paths:
               schema:
                 title: Success_Availability
                 required:
-                - data
+                  - data
                 type: object
                 properties:
                   warnings:
@@ -68,72 +68,72 @@ paths:
                   meta:
                     count: 1
                   data:
-                  - type: flight-availability
-                    id: "1"
-                    originDestinationId: "1"
-                    source: GDS
-                    instantTicketingRequired: false
-                    paymentCardRequired: false
-                    duration: PT10H35M
-                    segments:
-                    - id: "1"
-                      numberOfStops: 0
-                      blacklistedInEU: false
-                      departure:
-                        iataCode: BOS
-                        terminal: E
-                        at: 2023-11-14T20:25:00
-                      arrival:
-                        iataCode: LHR
-                        terminal: "4"
-                        at: 2023-11-15T08:05:00
-                      carrierCode: 6X
-                      number: "214"
-                      aircraft:
-                        code: "772"
-                      availabilityClasses:
-                      - numberOfBookableSeats: 9
-                        class: F
-                      - numberOfBookableSeats: 9
-                        class: J
-                      - numberOfBookableSeats: 9
-                        class: I
-                      - numberOfBookableSeats: 9
-                        class: W
-                      - numberOfBookableSeats: 9
-                        class: "Y"
-                      - numberOfBookableSeats: 9
-                        class: B
-                      - numberOfBookableSeats: 9
-                        class: H
-                      - numberOfBookableSeats: 9
-                        class: K
-                      - numberOfBookableSeats: 9
-                        class: M
-                      - numberOfBookableSeats: 9
-                        class: G
-                      - numberOfBookableSeats: 9
-                        class: X
-                    - id: "2"
-                      numberOfStops: 0
-                      blacklistedInEU: false
-                      departure:
-                        iataCode: LHR
-                        at: 2023-11-15T10:30:00
-                      arrival:
-                        iataCode: MAD
-                        at: 2023-11-15T13:00:00
-                      carrierCode: 6X
-                      number: "9931"
-                      aircraft:
-                        code: "320"
-                      availabilityClasses:
-                      - numberOfBookableSeats: 9
-                        class: J
-                      - numberOfBookableSeats: 9
-                        class: I
-                      - numberOfBookableSeats: 9
-                        class: "Y"
+                    - type: flight-availability
+                      id: "1"
+                      originDestinationId: "1"
+                      source: GDS
+                      instantTicketingRequired: false
+                      paymentCardRequired: false
+                      duration: PT10H35M
+                      segments:
+                        - id: "1"
+                          numberOfStops: 0
+                          blacklistedInEU: false
+                          departure:
+                            iataCode: BOS
+                            terminal: E
+                            at: 2023-11-14T20:25:00
+                          arrival:
+                            iataCode: LHR
+                            terminal: "4"
+                            at: 2023-11-15T08:05:00
+                          carrierCode: 6X
+                          number: "214"
+                          aircraft:
+                            code: "772"
+                          availabilityClasses:
+                            - numberOfBookableSeats: 9
+                              class: F
+                            - numberOfBookableSeats: 9
+                              class: J
+                            - numberOfBookableSeats: 9
+                              class: I
+                            - numberOfBookableSeats: 9
+                              class: W
+                            - numberOfBookableSeats: 9
+                              class: "Y"
+                            - numberOfBookableSeats: 9
+                              class: B
+                            - numberOfBookableSeats: 9
+                              class: H
+                            - numberOfBookableSeats: 9
+                              class: K
+                            - numberOfBookableSeats: 9
+                              class: M
+                            - numberOfBookableSeats: 9
+                              class: G
+                            - numberOfBookableSeats: 9
+                              class: X
+                        - id: "2"
+                          numberOfStops: 0
+                          blacklistedInEU: false
+                          departure:
+                            iataCode: LHR
+                            at: 2023-11-15T10:30:00
+                          arrival:
+                            iataCode: MAD
+                            at: 2023-11-15T13:00:00
+                          carrierCode: 6X
+                          number: "9931"
+                          aircraft:
+                            code: "320"
+                          availabilityClasses:
+                            - numberOfBookableSeats: 9
+                              class: J
+                            - numberOfBookableSeats: 9
+                              class: I
+                            - numberOfBookableSeats: 9
+                              class: "Y"
                   dictionaries:
                     locations:
                       MAD:
@@ -173,7 +173,7 @@ components:
   schemas:
     Error_400:
       required:
-      - errors
+        - errors
       type: object
       properties:
         errors:
@@ -182,16 +182,16 @@ components:
             $ref: '#/components/schemas/Issue'
       example:
         errors:
-        - status: 400
-          code: 477
-          title: INVALID FORMAT
-          detail: invalid query parameter format
-          source:
-            parameter: airport
-            example: CDG
+          - status: 400
+            code: 477
+            title: INVALID FORMAT
+            detail: invalid query parameter format
+            source:
+              parameter: airport
+              example: CDG
     Error_500:
       required:
-      - errors
+        - errors
       type: object
       properties:
         errors:
@@ -200,9 +200,9 @@ components:
             $ref: '#/components/schemas/Issue'
       example:
         errors:
-        - status: 500
-          code: 141
-          title: SYSTEM ERROR HAS OCCURRED
+          - status: 500
+            code: 141
+            title: SYSTEM ERROR HAS OCCURRED
     Issue:
       type: object
       properties:
@@ -222,19 +222,17 @@ components:
         source:
           title: Issue_Source
           type: object
+          description: An object containing references to the source of the error.
           properties:
             pointer:
               type: string
-              description: "a JSON Pointer [RFC6901] to the associated entity in the\
-                \ request document"
+              description: A JSON Pointer [RFC6901] to the associated entity in the request document.
             parameter:
               type: string
-              description: a string indicating which URI query parameter caused the
-                issue
+              description: A string indicating which URI query parameter caused the issue.
             example:
               type: string
-              description: a string indicating an example of the right value
-          description: an object containing references to the source of the error
+              description: A string example of the correct value.
     LocationEntry:
       type: object
       additionalProperties:
@@ -243,7 +241,7 @@ components:
       type: object
       additionalProperties:
         type: string
-        description: the manufacturer/model of aircraft
+        description: The manufacturer/model of the aircraft
     CurrencyEntry:
       type: object
       additionalProperties:
@@ -253,7 +251,7 @@ components:
       type: object
       additionalProperties:
         type: string
-        description: the carrier name
+        description: The carrier name
     FlightSegment:
       type: object
       properties:
@@ -282,7 +280,7 @@ components:
         stops:
           type: array
           description:
-            information regarding the different stops composing the flight segment. 
+            information regarding the different stops composing the flight segment.
             E.g. technical stop, change of gauge..."
           items:
             $ref: '#/components/schemas/FlightStop'
@@ -302,14 +300,14 @@ components:
       title: FlightEndPoint
       description: departure or arrival information
       allOf:
-      - $ref: '#/components/schemas/OriginalFlightEndPoint'
-      - type: object
-        properties:
-          at:
-            type: string
-            description: local date and time in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) YYYY-MM-ddThh:mm:ss format
-            format: date-time
-            example: 2017-02-10T20:40:00
+        - $ref: '#/components/schemas/OriginalFlightEndPoint'
+        - type: object
+          properties:
+            at:
+              type: string
+              description: local date and time in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) YYYY-MM-ddThh:mm:ss format
+              format: date-time
+              example: 2017-02-10T20:40:00
     OriginalFlightStop:
       type: object
       properties:
@@ -322,27 +320,28 @@ components:
       title: FlightStop
       description: details of stops for direct or change of gauge flights
       allOf:
-      - $ref: '#/components/schemas/OriginalFlightStop'
-      - type: object
-        properties:
-          arrivalAt:
-            type: string
-            description: "arrival at the stop in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601)\
+        - $ref: '#/components/schemas/OriginalFlightStop'
+        - type: object
+          properties:
+            arrivalAt:
+              type: string
+              description: "arrival at the stop in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601)\
               \ YYYY-MM-ddThh:mm:ss format, e.g. 2017-02-10T20:40:00"
-            format: date-time
-          departureAt:
-            type: string
-            description: "departure from the stop in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601)\
+              format: date-time
+            departureAt:
+              type: string
+              description: "departure from the stop in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601)\
               \ YYYY-MM-ddThh:mm:ss format, e.g. 2017-02-10T20:40:00"
-            format: date-time
+              format: date-time
     AircraftEquipment:
       type: object
       properties:
         code:
-          pattern: "[a-zA-Z0-9]{3}"
+          pattern: '^[a-zA-Z0-9]{3}$'
           type: string
-          description: [IATA aircraft code](https://www.avcodes.co.uk/acrtypes.asp)
-          example: "318"
+          description: |
+            [IATA aircraft code](https://www.avcodes.co.uk/acrtypes.asp)
+          example: '318'
       description: information related to the aircraft
     OperatingFlight:
       type: object
@@ -360,10 +359,10 @@ components:
         \ in this flight. Economy, premium economy, business or first class"
       example: PREMIUM_ECONOMY
       enum:
-      - ECONOMY
-      - PREMIUM_ECONOMY
-      - BUSINESS
-      - FIRST
+        - ECONOMY
+        - PREMIUM_ECONOMY
+        - BUSINESS
+        - FIRST
     Co2Emission:
       type: object
       properties:
@@ -379,13 +378,13 @@ components:
           $ref: '#/components/schemas/TravelClass'
     Extended_OriginDestinationLight:
       allOf:
-      - $ref: '#/components/schemas/OriginDestinationLight'
-      - type: object
-        properties:
-          departureDateTime:
-            $ref: '#/components/schemas/DateTimeType'
-          arrivalDateTime:
-            $ref: '#/components/schemas/DateTimeType'
+        - $ref: '#/components/schemas/OriginDestinationLight'
+        - type: object
+          properties:
+            departureDateTime:
+              $ref: '#/components/schemas/DateTimeType'
+            arrivalDateTime:
+              $ref: '#/components/schemas/DateTimeType'
     OriginDestinationLight:
       type: object
       properties:
@@ -399,11 +398,7 @@ components:
             \ are supported."
           example: PAR
         destinationLocationCode:
-          type: string
-          description: "Destination location, such as a city or an airport. Currently,\
-            \ only the locations defined in [IATA](http://www.iata.org/publications/Pages/code-search.aspx)\
-            \ are supported."
-          example: NYC
+          $ref: 'SharedComponents.yaml#/components/schemas/IataLocationCode'
         includedConnectionPoints:
           maxItems: 2
           minItems: 1
@@ -413,7 +408,7 @@ components:
             \ Connecting Point. Currently, only the locations defined in IATA are\
             \ supported. Used only by the AMADEUS provider"
           example:
-          - MRS
+            - MRS
           items:
             title: code
             type: string
@@ -426,29 +421,29 @@ components:
             \ the locations defined in IATA are supported. Used only by the AMADEUS\
             \ provider"
           example:
-          - MRS
+            - MRS
           items:
             title: code
             type: string
     DateTimeType:
       required:
-      - date
+        - date
       type: object
       properties:
         date:
           type: string
-          description: "Dates are specified in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)\
-            \ YYYY-MM-DD format, e.g. 2018-12-25"
+          description: Dates specified in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) YYYY-MM-DD format
           format: date
           example: 2018-09-22
         time:
           type: string
+          pattern: '^(?:[01]\d|2[0-3]):(?:[0-5]\d):(?:[0-5]\d)$'
           description: "Local time. hh:mm:ss format, e.g 10:30:00"
           example: 10:30:00
     TravelerInfo:
       required:
-      - id
-      - travelerType
+        - id
+        - travelerType
       type: object
       properties:
         id:
@@ -458,8 +453,7 @@ components:
           $ref: '#/components/schemas/TravelerType'
         associatedAdultId:
           type: string
-          description: "if type=\"HELD_INFANT\", corresponds to the adult traveler's\
-            \ id who will share the seat"
+          description: ID of the associated adult. Required if travelerType is 'HELD_INFANT'.
     SearchCriteriaLight:
       type: object
       properties:
@@ -472,18 +466,18 @@ components:
           $ref: '#/components/schemas/FlightFiltersLight'
     Extended_SearchCriteria:
       allOf:
-      - $ref: '#/components/schemas/SearchCriteriaLight'
-      - type: object
-        properties:
-          includeClosedContent:
-            type: boolean
-            description: "If true, closed booking classes, departed flights and cancelled\
+        - $ref: '#/components/schemas/SearchCriteriaLight'
+        - type: object
+          properties:
+            includeClosedContent:
+              type: boolean
+              description: "If true, closed booking classes, departed flights and cancelled\
               \ flights will also be included in the response."
-            example: false
-          class:
-            type: string
-            description: The code of the booking class
-            example: A
+              example: false
+            class:
+              type: string
+              description: The code of the booking class
+              example: A
     CabinRestriction:
       title: CabinRestriction
       type: object
@@ -496,8 +490,8 @@ components:
           description: The list of originDestination identifiers for which the cabinRestriction
             applies
           example:
-          - 1
-          - 2
+            - 1
+            - 2
           items:
             type: string
     FlightFiltersLight:
@@ -547,27 +541,26 @@ components:
       type: object
       properties:
         maxNumberOfConnections:
-          type: number
-          description: "The maximal number of connections for each itinerary. Value\
-            \ can be 0, 1 or 2."
-          example: 2.0
+          type: integer
+          minimum: 0
+          maximum: 2
+          description: The maximum number of connections for each itinerary. Value can be 0, 1, or 2.
         airportChangeAllowed:
           type: boolean
-          description: Allow to change airport during connection
-          example: false
+          description: Allow connecting flights at different airports. This means travelers change airports between
+            flights.
         technicalStopsAllowed:
           type: boolean
           description: This option allows the single segment to have one or more intermediate
             stops (technical stops).
-          example: true
       description: Restriction towards number of connections.
     FlightAvailability:
       title: Flight-availability
       required:
-      - id
-      - segments
-      - source
-      - type
+        - id
+        - segments
+        - source
+        - type
       type: object
       properties:
         type:
@@ -586,12 +579,10 @@ components:
           $ref: '#/components/schemas/FlightOfferSource'
         instantTicketingRequired:
           type: boolean
-          description: "If true, inform that a ticketing will be required at booking\
-            \ step."
-          example: false
+          description: If true, inform that a ticketing will be required during the booking step.
         paymentCardRequired:
           type: boolean
-          description: "If true, a payment card is mandatory to book this flight offer"
+          description: If true, a payment card is mandatory to book this flight offer.
           example: false
         duration:
           $ref: 'SharedComponents.yaml#/components/schemas/Duration'
@@ -604,57 +595,57 @@ components:
             $ref: '#/components/schemas/Extended_Segment'
     Segment:
       allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: Id of the segment
-            example: "1"
-          numberOfStops:
-            type: integer
-            description: Number of stops
-            example: 0
-          blacklistedInEU:
-            type: boolean
-            description: |
-              When the flight has a marketing or/and operating airline that is identified as
-              blacklisted by the European Commission. To improve travel safety, the European
-              Commission regularly updates the list of the banned carriers from operating in Europe.
-              It allows any Travel Agency located in the European Union to easily identify and hide
-              any travel recommendation based on some unsafe airlines.
-              The [list of the banned airlines](https://ec.europa.eu/transport/sites/transport/files/air-safety-list_en.pdf)
-              is published in the Official Journal of the European Union, where they are included as
-              annexes A and B to the Commission Regulation. The blacklist of an airline can concern
-              all its flights or some specific aircraft types pertaining to the airline.
-            example: false
-          co2Emissions:
-            minItems: 1
-            type: array
-            description: Co2 information
-            items:
-              $ref: '#/components/schemas/Co2Emission'
-      - $ref: '#/components/schemas/FlightSegment'
+        - type: object
+          properties:
+            id:
+              type: string
+              description: Id of the segment
+              example: "1"
+            numberOfStops:
+              type: integer
+              description: Number of stops
+              example: 0
+            blacklistedInEU:
+              type: boolean
+              description: |
+                When the flight has a marketing or/and operating airline that is identified as
+                blacklisted by the European Commission. To improve travel safety, the European
+                Commission regularly updates the list of the banned carriers from operating in Europe.
+                It allows any Travel Agency located in the European Union to easily identify and hide
+                any travel recommendation based on some unsafe airlines.
+                The [list of the banned airlines](https://ec.europa.eu/transport/sites/transport/files/air-safety-list_en.pdf)
+                is published in the Official Journal of the European Union, where they are included as
+                annexes A and B to the Commission Regulation. The blacklist of an airline can concern
+                all its flights or some specific aircraft types pertaining to the airline.
+              example: false
+            co2Emissions:
+              minItems: 1
+              type: array
+              description: Co2 information
+              items:
+                $ref: '#/components/schemas/Co2Emission'
+        - $ref: '#/components/schemas/FlightSegment'
     Extended_Segment:
       allOf:
-      - type: object
-        properties:
-          closedStatus:
-            type: string
-            description: Status of the segment when it is closed.
-            example: CANCELLED
-            enum:
-            - CANCELLED
-            - DEPARTED
-            - NOT_AVAILABLE
-          availabilityClasses:
-            title: AvailabilityClasses
-            maxItems: 50
-            minItems: 1
-            type: array
-            description: List of booking classes for the segment
-            items:
-              $ref: '#/components/schemas/AvailabilityClass'
-      - $ref: '#/components/schemas/Segment'
+        - type: object
+          properties:
+            closedStatus:
+              type: string
+              description: Status of the segment when it is closed.
+              example: CANCELLED
+              enum:
+                - CANCELLED
+                - DEPARTED
+                - NOT_AVAILABLE
+            availabilityClasses:
+              title: AvailabilityClasses
+              maxItems: 50
+              minItems: 1
+              type: array
+              description: List of booking classes for the segment
+              items:
+                $ref: '#/components/schemas/AvailabilityClass'
+        - $ref: '#/components/schemas/Segment'
     AvailabilityClass:
       type: object
       properties:
@@ -676,9 +667,9 @@ components:
           description: Status of the booking class when it is closed.
           example: WAITLIST_OPEN
           enum:
-          - WAITLIST_OPEN
-          - WAITLIST_CLOSED
-          - ON_REQUEST
+            - WAITLIST_OPEN
+            - WAITLIST_CLOSED
+            - ON_REQUEST
         tourAllotment:
           $ref: '#/components/schemas/TourAllotment'
     TravelerType:
@@ -688,19 +679,19 @@ components:
         age restrictions : CHILD < 12y, HELD_INFANT < 2y, SEATED_INFANT < 2y, SENIOR >=60y
       example: ADULT
       enum:
-      - ADULT
-      - CHILD
-      - SENIOR
-      - YOUNG
-      - HELD_INFANT
-      - SEATED_INFANT
-      - STUDENT
+        - ADULT
+        - CHILD
+        - SENIOR
+        - YOUNG
+        - HELD_INFANT
+        - SEATED_INFANT
+        - STUDENT
     FlightOfferSource:
       type: string
       description: source of the flight offer
       example: GDS
       enum:
-      - GDS
+        - GDS
     AllotmentDetails:
       title: AllotmentDetails
       type: object
@@ -714,20 +705,20 @@ components:
     TourAllotment:
       title: TourAllotment
       allOf:
-      - $ref: '#/components/schemas/AllotmentDetails'
-      - type: object
-        properties:
-          mode:
-            type: string
-            description: How the allotment can be booked by the Travel Agency.
-            example: FREE
-            enum:
-            - FREE
-            - FORCED
-          remainingSeats:
-            type: number
-            description: Number of remaining seats in the allotment.
-            example: 9.0
+        - $ref: '#/components/schemas/AllotmentDetails'
+        - type: object
+          properties:
+            mode:
+              type: string
+              description: How the allotment can be booked by the Travel Agency.
+              example: FREE
+              enum:
+                - FREE
+                - FORCED
+            remainingSeats:
+              type: number
+              description: Number of remaining seats in the allotment.
+              example: 9.0
     Dictionaries:
       type: object
       properties:
@@ -753,9 +744,9 @@ components:
     GetFlightAvailabilitiesQuery:
       title: getFlightAvailabilitiesQuery
       required:
-      - originDestinations
-      - sources
-      - travelers
+        - originDestinations
+        - sources
+        - travelers
       type: object
       properties:
         originDestinations:
@@ -786,24 +777,24 @@ components:
           description: "Allows enable one or more sources. If present in the list,\
             \ these sources will be called by the system. \nGDS : Full service carriers"
           example:
-          - GDS
+            - GDS
           items:
             $ref: '#/components/schemas/FlightOfferSource'
         searchCriteria:
           $ref: '#/components/schemas/Extended_SearchCriteria'
       example:
         originDestinations:
-        - id: "1"
-          originLocationCode: BOS
-          destinationLocationCode: MAD
-          departureDateTime:
-            date: 202-11-14
-            time: 21:15:00
+          - id: "1"
+            originLocationCode: BOS
+            destinationLocationCode: MAD
+            departureDateTime:
+              date: 202-11-14
+              time: 21:15:00
         travelers:
-        - id: "1"
-          travelerType: ADULT
+          - id: "1"
+            travelerType: ADULT
         sources:
-        - GDS
+          - GDS
     Collection_Meta_AvailSearch:
       title: Collection_Meta
       type: object
@@ -825,7 +816,7 @@ components:
           schema:
             title: Success_Availability
             required:
-            - data
+              - data
             type: object
             properties:
               warnings:
@@ -844,72 +835,72 @@ components:
               meta:
                 count: 1
               data:
-              - type: flight-availability
-                id: "1"
-                originDestinationId: "1"
-                source: GDS
-                instantTicketingRequired: false
-                paymentCardRequired: false
-                duration: PT10H35M
-                segments:
-                - id: "1"
-                  numberOfStops: 0
-                  blacklistedInEU: false
-                  departure:
-                    iataCode: BOS
-                    terminal: E
-                    at: 2023-11-14T20:25:00
-                  arrival:
-                    iataCode: LHR
-                    terminal: "4"
-                    at: 2023-11-15T08:05:00
-                  carrierCode: 6X
-                  number: "214"
-                  aircraft:
-                    code: "772"
-                  availabilityClasses:
-                  - numberOfBookableSeats: 9
-                    class: F
-                  - numberOfBookableSeats: 9
-                    class: J
-                  - numberOfBookableSeats: 9
-                    class: I
-                  - numberOfBookableSeats: 9
-                    class: W
-                  - numberOfBookableSeats: 9
-                    class: "Y"
-                  - numberOfBookableSeats: 9
-                    class: B
-                  - numberOfBookableSeats: 9
-                    class: H
-                  - numberOfBookableSeats: 9
-                    class: K
-                  - numberOfBookableSeats: 9
-                    class: M
-                  - numberOfBookableSeats: 9
-                    class: G
-                  - numberOfBookableSeats: 9
-                    class: X
-                - id: "2"
-                  numberOfStops: 0
-                  blacklistedInEU: false
-                  departure:
-                    iataCode: LHR
-                    at: 2023-11-15T10:30:00
-                  arrival:
-                    iataCode: MAD
-                    at: 2023-11-15T13:00:00
-                  carrierCode: 6X
-                  number: "9931"
-                  aircraft:
-                    code: "320"
-                  availabilityClasses:
-                  - numberOfBookableSeats: 9
-                    class: J
-                  - numberOfBookableSeats: 9
-                    class: I
-                  - numberOfBookableSeats: 9
-                    class: "Y"
+                - type: flight-availability
+                  id: "1"
+                  originDestinationId: "1"
+                  source: GDS
+                  instantTicketingRequired: false
+                  paymentCardRequired: false
+                  duration: PT10H35M
+                  segments:
+                    - id: "1"
+                      numberOfStops: 0
+                      blacklistedInEU: false
+                      departure:
+                        iataCode: BOS
+                        terminal: E
+                        at: 2023-11-14T20:25:00
+                      arrival:
+                        iataCode: LHR
+                        terminal: "4"
+                        at: 2023-11-15T08:05:00
+                      carrierCode: 6X
+                      number: "214"
+                      aircraft:
+                        code: "772"
+                      availabilityClasses:
+                        - numberOfBookableSeats: 9
+                          class: F
+                        - numberOfBookableSeats: 9
+                          class: J
+                        - numberOfBookableSeats: 9
+                          class: I
+                        - numberOfBookableSeats: 9
+                          class: W
+                        - numberOfBookableSeats: 9
+                          class: "Y"
+                        - numberOfBookableSeats: 9
+                          class: B
+                        - numberOfBookableSeats: 9
+                          class: H
+                        - numberOfBookableSeats: 9
+                          class: K
+                        - numberOfBookableSeats: 9
+                          class: M
+                        - numberOfBookableSeats: 9
+                          class: G
+                        - numberOfBookableSeats: 9
+                          class: X
+                    - id: "2"
+                      numberOfStops: 0
+                      blacklistedInEU: false
+                      departure:
+                        iataCode: LHR
+                        at: 2023-11-15T10:30:00
+                      arrival:
+                        iataCode: MAD
+                        at: 2023-11-15T13:00:00
+                      carrierCode: 6X
+                      number: "9931"
+                      aircraft:
+                        code: "320"
+                      availabilityClasses:
+                        - numberOfBookableSeats: 9
+                          class: J
+                        - numberOfBookableSeats: 9
+                          class: I
+                        - numberOfBookableSeats: 9
+                          class: "Y"
               dictionaries:
                 locations:
                   MAD:
@@ -922,12 +913,18 @@ components:
                     cityCode: BOS
                     countryCode: US
     "400_Search":
-      description: "code    | title                                 \n------- | -------------------------------------\
-        \ \n425     | INVALID DATE\n477     | INVALID FORMAT\n572     | INVALID OPTION\n\
-        2668    | PARAMETER COMBINATION INVALID/RESTRICTED\n2781    | INVALID LENGTH\n\
-        4926    | INVALID DATA RECEIVED\n9880    | SELECTED DATE IS TOO FAR IN THE\
-        \ FUTURE\n10661   | MAXIMUM NUMBER OF OCCURRENCES EXCEEDED \n32171   | MANDATORY\
-        \ DATA MISSING\n"
+      description: |
+        | code  | title                                    |                       
+        |-------|------------------------------------------|
+        | 425   | INVALID DATE                             |
+        | 477   | INVALID FORMAT                           |
+        | 572   | INVALID OPTION                           |
+        | 2668  | PARAMETER COMBINATION INVALID/RESTRICTED |
+        | 2781  | INVALID LENGTH                           |
+        | 4926  | INVALID DATA RECEIVED                    |
+        | 9880  | SELECTED DATE IS TOO FAR IN THE FUTURE   |
+        | 10661 | MAXIMUM NUMBER OF OCCURRENCES EXCEEDED   |
+        | 32171 | MANDATORY DATA MISSING                   |
       content:
         application/vnd.amadeus+json:
           schema:
